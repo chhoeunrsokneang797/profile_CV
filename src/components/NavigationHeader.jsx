@@ -70,23 +70,22 @@ const NavigationHeader = () => {
     { name: "Skill", href: "/skill", current: false },
     { name: "Services", href: "/services", current: false },
     { name: "Portfolio", href: "/portfolio", current: false },
-    { name: "Resume", href: "/resume", current: false },
     { name: "Contact", href: "/contact", current: false },
   ];
 
   return (
     <div className="bg-gray-50 w-full dark:bg-gray-800 font-inter">
       <nav className="bg-white border-b border-gray-200 shadow-lg dark:bg-gray-900 rounded-b-xl">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <div className="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-4">
           {/* Logo and Name */}
-          <div
-            href="#"
+          <a
+            href="/"
             className="flex items-center space-x-3 rtl:space-x-reverse border-2 p-1"
           >
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white ">
-              PROFILE
+              SOKNEANG
             </span>
-          </div>
+          </a>
 
           <div className="flex items-center lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse">
             {/* Mobile Menu Button (Hamburger/X Icon) - Now functional via React state */}

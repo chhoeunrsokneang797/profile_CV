@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import referenceImage from "../../assets/image_sokneang.jpg";
 import Skill from "../skill/Skill";
 import Services from "../services/Services";
+import Education from "./Education";
+import 'aos/dist/aos.css';
+import Aos from "aos";
+import Portfolio from "../portfolio/Portfolio";
 const useTypingEffect = (phrases) => {
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
@@ -56,8 +60,9 @@ const useTypingEffect = (phrases) => {
   return { typedText: displayText, isTyping: !isDeleting, isPaused };
 };
 
+
 // --- Main App Component ---
-const About = () => {
+function About() {
   const phrases = [
     "HI, I AM CHHOEUNR SOKNEANG",
     "I AM A WEB FRONTEND DEVELOPER",
@@ -68,10 +73,15 @@ const About = () => {
   // Use a placeholder image URL for the background
   const backgroundImageUrl = "";
 
+    useEffect(() => {
+        // Fix 1: Initialize AOS here
+        Aos.init({ duration: 1000 });
+    }, []); // Empty array runs it once on mount
+
   return (
     <>
       <div
-        className="relative flex flex-col items-center justify-center min-h-screen text-center p-4 overflow-hidden font-inter"
+        className="relative flex flex-col items-center justify-center min-h-screen text-center p-4 overflow-hidden font-inter" data-aos="fade-up"
         style={{
           backgroundImage: `url(${backgroundImageUrl})`,
           backgroundSize: "cover",
@@ -127,7 +137,7 @@ const About = () => {
         {/* // about me */}
       </div>
 
-      <div className="lg:py-12 py-0">
+      <div className="lg:py-12 py-0" data-aos="fade-up">
         <div className="flex justify-center items-center p-4">
           <h2 className="text-2xl sm:text-xs lg:text-4xl uppercase font-medium">
             About me
@@ -142,8 +152,7 @@ const About = () => {
                 <img
                   src={referenceImage}
                   alt="Reference image to recreate"
-                  className="w-full rounded-lg border border-gray-200"
-                />
+                  className="w-full rounded-lg border border-gray-200" />
               </div>
 
               {/* Recreation Template */}
@@ -171,10 +180,12 @@ const About = () => {
           </div>
         </div>
       </div>
+      <Education />
       <Skill />
       <Services />
+      <Portfolio/>
     </>
   );
-};
+}
 
 export default About;

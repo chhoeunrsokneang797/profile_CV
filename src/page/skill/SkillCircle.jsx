@@ -1,23 +1,23 @@
 import React from 'react'
 
-const SkillCircle = ({ percentage, title}) => {
-    const circleStyle = {
-    background: `conic-gradient(#3b82f6 ${percentage}%, #bfdbfe ${percentage}%)`, // Tailwind blue-500 and blue-200
-  };
+const SkillCircle = ({image, title,description}) => {
+     
   return (
-   <div className="flex flex-col items-center p-4">    
+   <div className="flex flex-col items-center p-4 border border-blue-500 bg-white shadow hover:shadow-2xl">    
       {/* Circle Container */}
       <div
         className="relative w-32 h-32 rounded-full flex items-center justify-center mb-4"
-        style={circleStyle}
+         
       >
         {/* Inner White Circle to create the 'stroke' effect */}
-        <div className="absolute w-28 h-28 rounded-full bg-white flex items-center justify-center">
-          <span className="text-xl font-bold text-gray-800">{percentage}%</span>
+        <div>
+           <img className='aspect-200/200' src={image} alt="" />
         </div>
+       
       </div>
 
       <h3 className="text-lg font-semibold text-gray-800 mb-1">{title}</h3>
+      <h2>{description}</h2>
     </div>
   )
 }

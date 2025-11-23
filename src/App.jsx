@@ -7,9 +7,8 @@ import PageNotFound from "./components/PageNotFound";
 import About from "./page/about/About";
 import Skill from "./page/skill/Skill";
 import Services from "./page/services/Services";
-import Portfolio from "./page/portfolio/Portfolio";
-import Resume from "./page/resume/Resume";
 import Contact from "./page/contact/Contact";
+import Portfolio from "./page/portfolio/Portfolio";
 
 function App() {
   return (
@@ -21,9 +20,7 @@ function App() {
           <Route path="/skill" element={<Skill />} />
           <Route path="/services" element={<Services />} />
           <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
-
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
